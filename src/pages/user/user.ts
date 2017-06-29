@@ -13,12 +13,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user.html',
 })
 export class UserPage {
+  userData: any
+  name: any;
+  gender: any;
+  picture: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
+    this.userData = this.navParams.get('userData');
+
+    console.log(this.userData);
   }
 
 }

@@ -11,6 +11,7 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
   FB_APP_ID: number = 112493112702999;
+  userData: any;
 
   constructor(public navCtrl: NavController, public fb: Facebook, public nativeStorage: NativeStorage) {
     this.fb.browserInit(this.FB_APP_ID, "v2.8");
@@ -41,8 +42,13 @@ export class LoginPage {
                 picture: user.picture
               })
               .then(function () {
+                this.userData = {
+                  name: user.name,
+                  gender: user.gender,
+                  picture: user.picture
+                }
                 // console.log("haha");
-                nav.push(UserPage);
+                nav.push(UserPage, this.userData);
               }, function (error) {
                 console.log("e1" + error);
               })
