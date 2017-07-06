@@ -8,6 +8,10 @@ import { LoginPage } from '../pages/login/login';
 import { UserPage } from '../pages/user/user';
 import {ProfilePage} from '../pages/profile/profile';
 import {RegisterPage} from '../pages/register/register';
+import{WorkexperiencePage} from '../pages/workexperience/workexperience';
+import { WorkEditPage } from '../pages/workedit/workedit';
+import {passwordHash} from '@angular/password-hash';
+
 @Component({
   templateUrl: 'app.html'
 })

@@ -1,0 +1,125 @@
+.WE-content{
+ background: #58bcbc;
+}
+
+.WE-box{
+    background: #ffffff;
+    height: 450px;
+    width: 280px;
+    margin: 10px 5px;
+}
+.container{
+    margin: 40px 40px;
+    height: 300px;
+    width: 280px;
+    }
+.container ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.container ul:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 100%;
+    border: 1px dashed #aaa;
+    margin-left: 20px;
+}
+.container ul li {
+    margin: 50px 60px;
+    position: relative;
+}
+
+.container ul li > span {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: 0px;
+    height: 100%;
+    border: 1px solid #aaa;
+    margin-left: 20px;
+}
+.container ul li > span:before, .container ul li > span:after{
+    content: '';
+    width:10px;
+    height: 10px;
+    border: 2px solid #aaa;
+    position: absolute;
+    border-radius: 50%;
+    left: -7px;  
+    background: #fff;   
+    
+}
+.container ul li > span:before{
+    top: -10px;
+    
+    
+}
+.container ul li > span:after{
+    top: 100%;
+    
+}
+
+.container ul li .date span{
+    position: absolute;
+    font-size: 10px;
+    left: -95px;
+    width: 30px;
+    text-align: center;
+    color: #777;
+    margin-left: 10px;
+}
+.container ul li .date span:first-child{
+    left:-95px;
+    top: -10px;
+    
+}
+.container ul li .date span:last-child{
+    top: 95%;
+}
+.info, .type {
+    font-size: 0.9em;
+}
+.title{
+    font-size: 1.1em;
+}
+$white: #ffffff;
+$turquoise: #58bcbc;
+
+.navbar {
+    ion-navbar {
+        div {
+            background-color: $white;
+        }
+    }
+    
+    #menuRow {
+        #menuBtn {
+            width: 12%;
+            padding: 0;
+            margin: 2%;
+            background-color: $white;
+        }
+    }
+}
+
+.ion-content {
+    background-color: $turquoise;
+    overflow: hidden;
+
+    h1 {
+        font-size: 20px;
+    }
+
+    ion-fab {
+        img {
+            width: 70%;
+        }
+    }
+}

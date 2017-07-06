@@ -8,21 +8,25 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { UserPage } from '../pages/user/user';
 import { LoginPage } from '../pages/login/login';
-import { Facebook} from '@ionic-native/facebook';
-import {ProfilePage} from '../pages/profile/profile';
+import {passwordHash} from '@angular/password-hash';
+import { Facebook } from '@ionic-native/facebook';
+import { ProfilePage } from '../pages/profile/profile';
 import {RegisterPage} from '../pages/register/register';
 import { AuthService } from './../providers/auth-service/auth-service';
 import { ProfilePageModule } from '../pages/profile/profile.module';
-
+import { WorkexperiencePage } from '../pages/workexperience/workexperience';
+import { WorkEditPage } from '../pages/workedit/workedit';
+import { UserServiceProvider } from '../providers/user-service/user-service';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     UserPage,
     LoginPage,
-    RegisterPage
-
-  ],
+    RegisterPage,
+    WorkexperiencePage,
+    WorkEditPage
+   ],
   imports: [
     BrowserModule,
     ProfilePageModule,
@@ -35,7 +39,10 @@ import { ProfilePageModule } from '../pages/profile/profile.module';
     UserPage,
     LoginPage,
     RegisterPage,
-    ProfilePage
+    ProfilePage,
+    WorkexperiencePage,
+    WorkEditPage
+  
   ],
   providers: [
     NativeStorage,
@@ -43,7 +50,9 @@ import { ProfilePageModule } from '../pages/profile/profile.module';
     SplashScreen,
     Facebook,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    AuthService
+    AuthService,
+    passwordHash,
+    UserServiceProvider
   ]
 })
 export class AppModule { }

@@ -1,62 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Http, Request, RequestOptions, Headers } from '@angular/http';
+import 'rxjs';
+import { AppGlobals } from '../../global';
+import {passwordHash} from '@angular/password-hash';
 
-export class User {
-  name: string;
-  email: string;
-
-  constructor(name: string, email: string) {
-    this.name = name;
-    this.email = email;
-  }
-}
 @Injectable()
 export class AuthService {
-  currentUser: User;
-  
-  constructor() {}
-  
-  public login(credentials) {
-    console.log("hi3")
-    if (credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials");
-    } else {
-      console.log("HIII")
-      return Observable.create(observer => {
-        console.log("hi2")
-        // At this point make a request to your backend to make a real check!
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('Eunice', 'eunice@gmail.com');
-        console.log(access)
-        observer.next(access);
-        observer.complete();
-      });
-    }
+  constructor(public http: Http, public _appGlobals: AppGlobals) {
+    console.log('Hello TempServiceProvider Provider');
   }
- //integrate backend
+
+  public login(credentials) { //forwards request to server
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this._appGlobals.baseUrl + "/signin", credentials, options).toPromise();
+  }
+
   public register(credentials) {
-    if (credentials.email === null || credentials.password === null) {
-      return Observable.throw("Please insert credentials");
-    } else {
-      // At this point store the credentials to your backend!
-      return Observable.create(observer => {
-        observer.next(true);
-        observer.complete();
-      });
-    }
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this._appGlobals.baseUrl + "/signup", credentials, options).toPromise();
   }
- 
-  public getUserInfo() : User {
-    return this.currentUser;
-  }
- 
+
   public logout() {
-    return Observable.create(observer => {
-      this.currentUser = null;
-      observer.next(true);
-      observer.complete();
-    });
   }
 }
