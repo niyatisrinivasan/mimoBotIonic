@@ -9,7 +9,7 @@ import { UserPage } from '../pages/user/user';
 import {ProfilePage} from '../pages/profile/profile';
 import {RegisterPage} from '../pages/register/register';
 import{WorkexperiencePage} from '../pages/workexperience/workexperience';
-import { WorkEditPage } from '../pages/workedit/workedit';
+import { WorkeditPage } from '../pages/workedit/workedit';
 import {passwordHash} from '@angular/password-hash';
 
 @Component({
@@ -17,7 +17,7 @@ import {passwordHash} from '@angular/password-hash';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = LoginPage;
+  rootPage:any = WorkexperiencePage;
 
   constructor
   (

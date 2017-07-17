@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { WorkEditPage } from './workedit';
+import { WorkeditPage } from './workedit';
 
 @NgModule({
   declarations: [
-    WorkEditPage,
+    WorkeditPage,
   ],
   imports: [
-    IonicPageModule.forChild(WorkEditPage),
+    IonicPageModule.forChild(WorkeditPage),
   ],
   exports: [
-    WorkEditPage
+    WorkeditPage
   ]
 })
 export class WorkeditPageModule {}

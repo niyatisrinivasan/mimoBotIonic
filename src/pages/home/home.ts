@@ -10,15 +10,15 @@ import {LoginPage} from '../../pages/login/login';
 export class HomePage {
  username = '';
   email = '';
-  constructor(public nav: NavController,  private auth: AuthService) {
-    let info = this.auth.getUserInfo();
-    this.username = info['name'];
-    this.email = info['email'];
+  // constructor(public nav: NavController,  private auth: AuthService) {
+  //   let info = this.auth.getUserInfo();
+  //   this.username = info['name'];
+  //   this.email = info['email'];
   }
 
-public logout() {
-    this.auth.logout().subscribe(succ => {
-      this.nav.setRoot('LoginPage')
-    });
-  }
+// public logout() {
+//     this.auth.logout().subscribe(succ => {
+//       this.nav.setRoot('LoginPage')
+//     });
+  // }
 }

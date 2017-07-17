@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
-import { WorkexperiencePage } from '../workexperience/workexperience';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import{WorkexperiencePage} from '../workexperience/workexperience';
 
 /**
  * Generated class for the WorkeditPage page.
@@ -13,19 +13,13 @@ import { WorkexperiencePage } from '../workexperience/workexperience';
   selector: 'page-workedit',
   templateUrl: 'workedit.html',
 })
-export class WorkEditPage {
+export class WorkeditPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-closeModal() {
-    console.log("hello");
-    this.viewCtrl.dismiss();
-    
-  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad WorkeditPage');
   }
-  
-  
 
 }
