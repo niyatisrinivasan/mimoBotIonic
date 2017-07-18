@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1055229462257",
+    "firebase_url": "https://my-first-project-ccdf3.firebaseio.com",
+    "project_id": "my-first-project-ccdf3",
+    "storage_bucket": "my-first-project-ccdf3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055229462257:android:34dc740270b26c7b",
+        "android_client_info": {
+          "package_name": "com.ionicframework.mimobot200973"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055229462257-6n1rnhnotp7gsp8pjg2mpoqb7lcad0el.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd-bSkEesPuhTGS1v8uclBU042uKUbS58"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

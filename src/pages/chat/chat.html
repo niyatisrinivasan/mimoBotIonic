@@ -1,0 +1,42 @@
+<ion-header class="navbar">
+  <ion-navbar>
+    <ion-row id="menuRow">
+      <button id="menuBtn" menuToggle (click)="openMenu()">
+          <img src="assets/menu.png"/>
+        </button>
+
+      <ion-title>mimoBot</ion-title>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="ion-content">
+  <ion-card text-wrap *ngFor="let msg of messages">
+    <!--<ion-card-content *ngIf="msg.type === 'sent'" class="userMsg">
+      {{ msg.text }}
+    </ion-card-content>
+
+    <ion-card-content *ngIf="msg.type == 'received'" class="botMsg">
+      {{ msg.text }}
+    </ion-card-content>-->
+
+    <ion-card-content [ngClass]="{'userMsg': msg.isUserMsg, 'botMsg': !msg.isUserMsg }"> <!-- if it's a user's msg, then the class is userMsg-->
+      {{ msg.text }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="openPopover($event)">
+     <img src="assets/circle icon.png"/>
+   </button>
+  </ion-fab>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-row id="userInputRow">
+    <ion-col id="userInput">
+      <ion-input type="text" [(ngModel)]="userMsg" name="userMsg" ngControl="userMsg" class="button button-clear" placeholder="Type here..."></ion-input>
+    </ion-col>
+    <button ion-button id="sendBtn" (click)="sendMessage()">Send</button>
+  </ion-row>
+</ion-footer>
