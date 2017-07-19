@@ -36,7 +36,7 @@ export class MyApp {
 
     PushObject.on('notification').subscribe((notification: any) => {
         if(notification.additionalData.foreground){
-            let youralert = this.alertCtlr.create({
+            let youralert = this.alertCtlr.create({ //use toast
               title: 'New Push Notification',
               message: notification.message
             });
@@ -44,7 +44,8 @@ export class MyApp {
         }
     });
 
-    PushObject.on('registration').subscribe((registration: any) => alert('Device registered'+ registration));
+    //use toast instead
+    PushObject.on('registration').subscribe((registration: any) => console.log(registration)); //registrationId
 
     PushObject.on('error').subscribe(error => alert('Error with push plugin'+ error));
 
